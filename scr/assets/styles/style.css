@@ -1,0 +1,110 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    height: 100%;
+}
+
+.header {
+    grid-area: header;
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+.navbar {
+    grid-area: navbar;
+    background-color: #e13434;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+.sidebar {
+    grid-area: sidebar;
+    background-color: #e9c80c;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+.main {
+    grid-area: main;
+    background-color: #61f70a;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+.footer {
+    grid-area: footer;
+    background-color: #0553e3;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+body{
+    font-family: "Noto Sans", sans-serif;
+    display:grid;
+    gap: 10px;
+    min-height: 100%;
+    grid-template: 
+        "header" 100px
+        "navbar" 50px
+        "main" auto
+        "footer" 100px; 
+
+    ;
+}
+
+/*Responsive para tablets*/
+@media (min-width: 600px){
+    body{
+        /*Indica el tamaño de las columnas*/
+        /*grid-template-columns: 1fr 3fr;*/
+
+        /*"header header" (alto de las filas) / => al final (ancho columnas)*/
+        grid-template: 
+            "header header" 100px
+            "navbar navbar" 50px
+            "main main" auto
+            "footer footer" 100px / 200px auto; 
+    }
+}
+
+/*Responsive para Escritorio*/
+@media (min-width: 900px){
+    body{
+        grid-template: 
+            "header header header" 100px
+            "navbar main main" auto
+            "footer footer footer" 100px / 200px auto 200px; 
+    }
+}
+
+/*Carrusel*/
+.carrusel {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    width: calc(100% - 100px);
+}
+.carrusel img {
+    position: relative;
+    min-width: 80 px;
+    margin: 10px;
+    cursor: pointer;
+    transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) ;
+}	
+
