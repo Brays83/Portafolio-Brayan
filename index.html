@@ -5,26 +5,188 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portafolio Brayan</title>
 
+    <link rel="icon" type="image/png" href="./assets/images/favicon.ico">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.31.0/dist/tabler-icons.min.css"/>
+
     <link rel="stylesheet" href="assets/styles/style.css">
 </head>
-<body>
-    <header class="header">encabezado</header>
-    <nav class="navbar">navegador</nav>
-    <section class="main">
-        <hero>
-            <div class="carrusel">
+<body >
+    <header class="header">
+        <div class="inicio">
 
-                <img src="./assets/images/images.png" alt="Imagen 1">
+            <a href="#hero"><span>Inicio</span></a>
+            <a href="#sobre-mi"><span>Sobre mi</span></a>
+            <a href="#proyectos"><span>Proyectos</span></a>
 
+        </div>
+        
+        <div class="final">
+            
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" role="switch" id="switch-dark-mode">
+                <i class="ti ti-sun-filled"></i>
             </div>
 
-        </hero>
-    </section>
+        </div>
+    </header>
+
+    <nav class="navbar">
+
+        <a href="#hero"><h4>Inicio</h4></a>
+        <a href="#sobre-mi"><h4>Sobre mi</h4></a>
+        <a href="#proyectos"><h4>Proyectos</h4></a>
+
+    </nav>
+
+    <article class="main">
+        <section id="hero">
+            <div class="carrusel">
+               
+                <div class="elementos-carrusel">
+                    <img src="https://images2.alphacoders.com/686/thumb-1920-686657.jpg" alt="">
+                    <img src="https://assets.nintendo.com/image/upload/q_auto/f_auto/ncom/software/switch/70010000068688/1c5583f6bbce5bccdc923c25c35ba8f42128b55df84f4a2fbeea74b6d1d1516e" alt="">
+                    
+                    
+                </div>
+                <ul class="puntos">
+                    <li class="punto"></li>
+                    <li class="punto"></li>
+                </ul>
+
+                
+
+            </div>
+            
+        </section>
+        
+        <section id="sobre-mi">
+            <div class="informacion">
+                <h1 class="info-nombre">Brayan Smith</h1>
+
+                <div class="descripcion">
+                    <p>Hola bienvenido a mi Portafolio soy estudiante de Ingenieria de software de la UPC en Perú. Soy creativo e intuitivo en la creacion de experiencias web.</p>
+                </div>
+                
+
+                <div class="habilidades">
+                    <!-- Lenguajes-->
+                    <div class="habilidades-column">
+                        <img alt="Static Badge" src="https://img.shields.io/badge/TypeScript-%233178C6?style=for-the-badge&logo=typescript&logoColor=white">
+                        <img alt="Static Badge" src="https://img.shields.io/badge/javascript-%23F7DF1E?style=for-the-badge&logo=javascript&logoColor=black">
+                        <img alt="Static Badge" src="https://img.shields.io/badge/html-%23E34F26?style=for-the-badge&logo=html5&logoColor=white">
+                        <img alt="Static Badge" src="https://img.shields.io/badge/Css-%23663399?style=for-the-badge&logo=css&logoColor=white">
+                        <img alt="Static Badge" src="https://img.shields.io/badge/C%2B%2B-%2300599C?style=for-the-badge&logo=cplusplus&logoColor=white">
+
+                        <!-- <img alt="Static Badge" src="https://img.shields.io/badge/Python-%233776AB?style=for-the-badge&logo=python&logoColor=%23ECD53F">-->
+
+                    </div>
+
+
+                    <div  class="habilidades-column">
+                        <img alt="Static Badge" src="https://img.shields.io/badge/Spring-%236DB33F?style=for-the-badge&logo=spring&logoColor=white">
+                        <img alt="Static Badge" src="https://img.shields.io/badge/.Net-%23512BD4?style=for-the-badge&logo=dotnet&logoColor=white">
+                        <img alt="Static Badge" src="https://img.shields.io/badge/Vue-%234FC08D?style=for-the-badge&logo=vuedotjs&logoColor=white">
+                        <img alt="Static Badge" src="https://img.shields.io/badge/Angular-%230F0F11?style=for-the-badge&logo=angular&logoColor=white">    
+                       
+                    </div>
+
+                    <!-- Base de Datos-->
+                    <div class="habilidades-column">
+                        <img alt="Static Badge" src="https://img.shields.io/badge/MySql-%234479A1?style=for-the-badge&logo=mysql&logoColor=white">
+                        <img alt="Static Badge" src="https://img.shields.io/badge/MongoDB-%2347A248?style=for-the-badge&logo=mongodb&logoColor=white">
+                        <img alt="Static Badge" src="https://img.shields.io/badge/Microsoft%20SQL%20Server-%230036dc?style=for-the-badge&logo=microsoftsqlserver&logoColor=white">
+
+
+                    </div>
+
+                    <!-- Software-->
+                    <div class="habilidades-column">
+                        <img alt="Static Badge" src="https://img.shields.io/badge/Jira-%230052CC?style=for-the-badge&logo=jira&logoColor=white">
+                        <img alt="Static Badge" src="https://img.shields.io/badge/Docker-%232496ED?style=for-the-badge&logo=docker&logoColor=white">
+                        <img alt="Static Badge" src="https://img.shields.io/badge/Blender-%23E87D0D?style=for-the-badge&logo=blender&logoColor=white">
+                        <img alt="Static Badge" src="https://img.shields.io/badge/Miro-%23050038?style=for-the-badge&logo=miro&logoColor=yellow">
+                    </div>
+                </div>
+
+                <div class="descarga-cv">
+                    <button type="button" class="btn btn-secondary" onclick="location.href='https://drive.google.com/file/d/1qmKaDSo5onWfpTJi6Doquj2jJXcrjPaL/view?usp=sharing';">Descargar CV</button>
+                </div>
+
+                
+            </div>
+            <div class="informacion-imagen">
+
+                <img src="./assets/images/images.png" alt="">
+
+            </div>
+        </section>
+
+        <section id="proyectos">
+            <div class="titulo-proyectos">
+                <h2>Mis Ultimos Proyectos</h2>
+            </div>
+            
+            <div class="conjunto-proyectos">
+
+                <div class="card" style="width: 375px;">
+                    <img src="./assets/images/images.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Card title</h5>
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+    
+                <div class="card" style="width: 375px;">
+                    <img src="./assets/images/images.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Card title</h5>
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                  </div>
+                
+            </div>
+        </section>
+
+    </article>
     <footer class="footer">
+        <div>
+            <div class="logo-footer">
+                <h2>Brayan</h2>
+                <h2>Smith</h2>
+            </div>
+
+        </div>
+
+        <div class="final">
+            <div class="redes-sociales">
+                <h4>Redes Sociales</h4>
+                <div>
+                    <button class="btn-icono" onclick="location.href='https://www.linkedin.com/in/brayan-smith-morales-quispe-6a6260189/';">
+                        <i class="ti ti-brand-linkedin-filled"></i>
+
+                    </button>
+                    <button class="btn-icono" onclick="location.href='https://github.com/Brays83';">
+                        <i class="ti ti-brand-github-filled"></i>
+
+                    </button>
+                    <button class="btn-icono" onclick="window.location.href='mailto:brayanmq12@gmail.com?subject=Hola&body=Este%20es%20un%20mensaje'">
+                        <i class="ti ti-mail-filled"></i>
+
+                    </button>
+                    
+                    
+                    
+                </div>
+            </div>
+
+        </div>
         
     </footer>
 
     <script src="./assets/scripts/app.js"></script>
-    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
