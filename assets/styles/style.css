@@ -105,18 +105,21 @@ section {
 
 .navbar {
     grid-area: navbar;
+
+    /*FIjar el navbar para que se desplaze junto al*/
+    position: fixed;
+    top: 100px;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+
+
     background-color: white;
 
     padding: 10px;
     text-align: center;
 }
 
-/*Si esta en la seccion correspondiente al navbar*/
-/*
-.navbar a.activo {
-    background-color: aquamarine;
-
-}*/
 
 
 .main {
@@ -316,11 +319,15 @@ body{
         padding: 10px;
         display: flex;
         flex-direction: column;
-        align-items: center;
+    
+
+        /*Fijar el navbar para que se desplaze junto al*/
+        top: 100px;
+        left: 0;
+        height: 100%;
+        width:150PX ;
 
         box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
-
-
     }
 
     .centro {
@@ -544,6 +551,14 @@ body{
 .btn-icono{
     border-width: 0;
     background-color: transparent;
+}
+
+.btn-icono:hover{
+    scale: 1.05;
+}
+
+.animan:hover{
+    scale: 1.05;
 }
 
 
