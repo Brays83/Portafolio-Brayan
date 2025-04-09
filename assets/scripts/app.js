@@ -24,9 +24,25 @@ const titulo_proyectos = document.querySelector('.titulo-proyectos');
 const array_animacion_header = [carrusel, titulo_sobremi, titulo_proyectos];
 
 
-console.log(items_nav)
+//Logica para el navbar
+function activeBtnNavBar(elemento){
+
+    const items_nav = document.querySelectorAll('.navbar a');
+    
+    items_nav.forEach((item) => {
+        item.classList.remove('activo');
+    })
+
+    elemento.classList.add('activo');
+    
+
+    
+}
 
 
+
+
+//Logica para el header
 const observador_header = new IntersectionObserver((entidades) => {
     entidades.forEach(entidad => {
         if(entidad.isIntersecting){
