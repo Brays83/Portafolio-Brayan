@@ -1,15 +1,31 @@
 const elementos_carrusel = document.querySelector('.elementos-carrusel');
 const puntos = document.querySelectorAll('.punto');
 
+const toggleSwitch = document.getElementById('switch-dark-mode');
+const body = document.body;
+const main = document.querySelector('.main');
+
+//Logica puntos de carrus
 puntos.forEach((punto, i) => {
-    punto.addEventListener('click', () => {  // Se quita `punto[i]`
-        let position = i;
-        let operation = position * -50;
 
+    punto.addEventListener('click', () => {  
+
+        puntos.forEach(p => {
+            p.classList.remove('activo-punto', 'activo-punto-dark');
+        });
+
+        punto.classList.add('activo-punto');
+        if (body.classList.contains('dark-mode')) {
+            punto.classList.add('activo-punto-dark');
+        }
+
+        let operation = i * -25;
         elementos_carrusel.style.transform = `translateX(${operation}%)`;
-
-        
+  
     });
+
+    
+    // Agregar clase a cada punto
 });
 
 /*Logica para iluminacion del header seccion */
@@ -34,8 +50,6 @@ function activeBtnNavBar(elemento){
     })
 
     elemento.classList.add('activo');
-    
-
     
 }
 
@@ -71,6 +85,7 @@ const observador_header = new IntersectionObserver((entidades) => {
     })
 },{})
 
+//Creacion de un Observador para ver en que seccion estamos
 array_animacion_header.forEach(seccion => {
     
     observador_header.observe(seccion);
@@ -78,31 +93,44 @@ array_animacion_header.forEach(seccion => {
 
 /*Modo Oscuro*/
 
-const toggleSwitch = document.getElementById('switch-dark-mode');
-const body = document.body;
-const main = document.querySelector('.main');
+
 
 if(localStorage.getItem('dark-mode') === 'true'){
     body.classList.add('dark-mode');
     main.classList.add('dark-mode');
+    puntos.forEach(p => p.classList.add('dark-mode-punto'));
     toggleSwitch.checked = true;
 }
+
+
 
 toggleSwitch.addEventListener('change', () => {
     if(toggleSwitch.checked){
         body.classList.add('dark-mode');
         main.classList.add('dark-mode');
+
+        puntos.forEach(p => p.classList.add('dark-mode-punto'));
+
         localStorage.setItem('dark-mode', 'true');
     }
     else{
         body.classList.remove('dark-mode');
         main.classList.remove('dark-mode');
+
+        puntos.forEach(p => p.classList.remove('dark-mode-punto'));
         localStorage.setItem('dark-mode', 'false');	
     }
 })
 
 
+document.getElementById("btn-descargar").addEventListener("click", () => {
+    const link = document.createElement("a");
+    link.href = "assets/images/BrayanSmith_Curriculum.pdf"; // Ruta del archivo PDF
+    link.download = "BrayanSmith_Curriculum.pdf"; // Nombre del archivo al descargar
 
+    link.click();
+
+});
 
 
 
