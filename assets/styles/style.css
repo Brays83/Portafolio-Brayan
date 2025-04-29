@@ -580,4 +580,25 @@ body{
     scale: 1.05;
 }
 
+/*Cards*/
+.btn i {
+    font-size: 1.2em;
+    margin-right: 8px; 
+    vertical-align: middle; 
+}
+.card-body div{
+    display: flex;
+    gap: 10px;
+    padding: 10px 10px 10px 0px;
+}
+
+.card{
+    background-color: rgb(120, 120, 120);
+    color: #ffffff;
+}
+
+.dark-mode-card{
+    background-color: #ffffff;
+    color: #000000;
+}
 

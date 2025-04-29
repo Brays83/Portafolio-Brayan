@@ -93,11 +93,12 @@ array_animacion_header.forEach(seccion => {
 
 /*Modo Oscuro*/
 
-
+const card = document.querySelectorAll('.card');
 
 if(localStorage.getItem('dark-mode') === 'true'){
     body.classList.add('dark-mode');
     main.classList.add('dark-mode');
+    card.forEach(c => c.classList.add('dark-mode-card'));
     puntos.forEach(p => p.classList.add('dark-mode-punto'));
     toggleSwitch.checked = true;
 }
@@ -109,6 +110,7 @@ toggleSwitch.addEventListener('change', () => {
         body.classList.add('dark-mode');
         main.classList.add('dark-mode');
 
+        card.forEach(c => c.classList.add('dark-mode-card'));
         puntos.forEach(p => p.classList.add('dark-mode-punto'));
 
         localStorage.setItem('dark-mode', 'true');
@@ -116,7 +118,7 @@ toggleSwitch.addEventListener('change', () => {
     else{
         body.classList.remove('dark-mode');
         main.classList.remove('dark-mode');
-
+        card.forEach(c => c.classList.remove('dark-mode-card'));
         puntos.forEach(p => p.classList.remove('dark-mode-punto'));
         localStorage.setItem('dark-mode', 'false');	
     }
