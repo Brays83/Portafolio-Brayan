@@ -150,8 +150,8 @@ section {
 .carrusel{
     /*oculta todo q sobresale*/
     overflow: hidden;
-    width: 90%;
-    max-width: 60em;
+    width: 100%;
+    max-width: 80em;
     
     
 }

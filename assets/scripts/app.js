@@ -1,3 +1,4 @@
+
 const elementos_carrusel = document.querySelector('.elementos-carrusel');
 const puntos = document.querySelectorAll('.punto');
 
@@ -5,28 +6,40 @@ const toggleSwitch = document.getElementById('switch-dark-mode');
 const body = document.body;
 const main = document.querySelector('.main');
 
+const totalSlides = puntos.length;
+
 //Logica puntos de carrus
-puntos.forEach((punto, i) => {
 
-    punto.addEventListener('click', () => {  
+let currentIndex = 0;
 
-        puntos.forEach(p => {
-            p.classList.remove('activo-punto', 'activo-punto-dark');
-        });
-
-        punto.classList.add('activo-punto');
-        if (body.classList.contains('dark-mode')) {
-            punto.classList.add('activo-punto-dark');
-        }
-
-        let operation = i * -25;
-        elementos_carrusel.style.transform = `translateX(${operation}%)`;
-  
+function moverCarrusel() {
+    puntos.forEach(p => {
+        p.classList.remove('activo-punto', 'activo-punto-dark');
     });
 
-    
-    // Agregar clase a cada punto
+    puntos[currentIndex].classList.add('activo-punto');
+    if (body.classList.contains('dark-mode')) {
+        puntos[currentIndex].classList.add('activo-punto-dark');
+    }
+
+    let operation = currentIndex * -25;
+    elementos_carrusel.style.transform = `translateX(${operation}%)`;
+
+    currentIndex = (currentIndex + 1) % puntos.length; // Avanza y reinicia al llegar al final
+}
+
+
+setInterval(moverCarrusel, 3000);
+
+
+puntos.forEach((punto, i) => {
+    punto.addEventListener('click', () => {
+        currentIndex = i; 
+        moverCarrusel();  
+    });
 });
+
+
 
 /*Logica para iluminacion del header seccion */
 
