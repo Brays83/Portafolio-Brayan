@@ -75,21 +75,30 @@ const observador_header = new IntersectionObserver((entidades) => {
         if(entidad.isIntersecting){
 
             console.log(entidad.target.classList[0]);
+              
+        
+            items_nav.forEach(item => {
+                item.classList.remove('activo', 'dark-activo');
+            });
+
+            let index = -1;
+
             if(entidad.target.classList[0] === 'elementos-carrusel'){
-                items_nav[1].classList.remove('activo');
-                items_nav[2].classList.remove('activo');
-                items_nav[0].classList.add('activo');  
+                index = 0;
             } else if(entidad.target.classList[0] === 'info-nombre'){
-                items_nav[0].classList.remove('activo');
-                items_nav[2].classList.remove('activo');
-                items_nav[1].classList.add('activo');
-                
+                index = 1;
             } else if(entidad.target.classList[0] === 'titulo-proyectos'){
-                items_nav[0].classList.remove('activo');
-                items_nav[1].classList.remove('activo');
-                items_nav[2].classList.add('activo');
-                
+                index = 2;
             }
+
+            if(index >= 0){
+                items_nav[index].classList.add('activo');
+
+                if (localStorage.getItem('dark-mode') === 'true') {
+                    items_nav[index].classList.add('dark-activo');
+                }
+            }
+            
             
             
             
@@ -107,14 +116,23 @@ array_animacion_header.forEach(seccion => {
 /*Modo Oscuro*/
 
 const card = document.querySelectorAll('.card');
+const header = document.querySelector('.header');
+
+//Logica para el icono del modo oscuro
+const icono_sun = document.querySelector('.icon-sun');
 
 if(localStorage.getItem('dark-mode') === 'true'){
     body.classList.add('dark-mode');
     main.classList.add('dark-mode');
     card.forEach(c => c.classList.add('dark-mode-card'));
     puntos.forEach(p => p.classList.add('dark-mode-punto'));
+
+    icono_sun.classList.add('ti-sun-filled')
+
+    header.classList.add('dark-mode-header');
     toggleSwitch.checked = true;
 }
+
 
 
 
@@ -122,7 +140,9 @@ toggleSwitch.addEventListener('change', () => {
     if(toggleSwitch.checked){
         body.classList.add('dark-mode');
         main.classList.add('dark-mode');
-
+        header.classList.add('dark-mode-header');
+        icono_sun.classList.add('ti-sun-filled')
+   
         card.forEach(c => c.classList.add('dark-mode-card'));
         puntos.forEach(p => p.classList.add('dark-mode-punto'));
 
@@ -133,6 +153,12 @@ toggleSwitch.addEventListener('change', () => {
         main.classList.remove('dark-mode');
         card.forEach(c => c.classList.remove('dark-mode-card'));
         puntos.forEach(p => p.classList.remove('dark-mode-punto'));
+        header.classList.remove('dark-mode-header');
+        icono_sun.classList.remove('ti-sun-filled')
+        
+        header.classList.remove('dark-mode-header');
+        
+
         localStorage.setItem('dark-mode', 'false');	
     }
 })
@@ -146,6 +172,8 @@ document.getElementById("btn-descargar").addEventListener("click", () => {
     link.click();
 
 });
+
+
 
 
 

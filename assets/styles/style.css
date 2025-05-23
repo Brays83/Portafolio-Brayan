@@ -97,7 +97,7 @@ section {
     grid-area: header;
     
     
-    background-color: #9c9c9c;
+    background-color: #4590EC;
     color: white;
     padding: 10px;
     text-align: center;
@@ -124,8 +124,8 @@ section {
 .navbar a.activo{ 
     margin: 0;
     color: white;
-    background-color: black;
-    border-radius: 16px;
+    background-color: #1B2C53;
+    border-radius: 8px;
     padding: 5px 10px;
 }
 
@@ -176,8 +176,9 @@ section {
 
 .elementos-carrusel img{
     width: calc(100%/4);
-    min-height: 10vh;
-    height: auto;
+    min-height: 0.5vh;
+    height: 700px; 
+    
     border-radius: 16px;
     
 }
@@ -207,7 +208,7 @@ section {
 }
 
 .activo-punto{
-    background-color: rgb(0, 0, 0);
+    background-color: #4590EC;
 
 }
 
@@ -249,6 +250,7 @@ body{
         "footer" 150px ; 
 
     ;
+    background-color: #E3E3E3;
 }
 
 .habilidades{
@@ -313,7 +315,7 @@ body{
 }
 
 .activo-punto-dark {
-    background-color: #9c9c9c; /* Color blanco para el punto activo en modo oscuro */ /* Opcional: borde para resaltar */
+    background-color: #244484; /* Color blanco para el punto activo en modo oscuro */ /* Opcional: borde para resaltar */
 }
 
 /*Responsive para tablets*/
@@ -410,11 +412,11 @@ body{
 
    
     .inicio a.activo{
-        background-color: black;
-        color: white;  /* Asegura que el texto se vea */
-        padding: 5px 10px; /* Añade espacio para que se note el cambio */
-        border-radius: 16px;
-        text-decoration: none; /* Elimina subrayado si lo tiene */
+        background-color: #244484;
+        color: white; 
+        padding: 5px 10px; 
+        border-radius: 8px;
+        text-decoration: none; 
     }
 
 
@@ -586,6 +588,11 @@ body{
     margin-right: 8px; 
     vertical-align: middle; 
 }
+.card-body {
+    display: flex;
+  flex-direction: column;
+  height: 100%;
+}
 .card-body div{
     display: flex;
     gap: 10px;
@@ -593,12 +600,30 @@ body{
 }
 
 .card{
-    background-color: rgb(120, 120, 120);
-    color: #ffffff;
+    
+    background-color: #ffffff;
+    color: #000000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn-proyecto{
+    display: flex;
+    justify-content: flex-start;
+    margin-top: auto;
 }
 
 .dark-mode-card{
     background-color: #ffffff;
     color: #000000;
+    box-shadow: 0 4px 8px rgba(128, 128, 128, 0.675);
 }
 
+
+
+ .inicio a.dark-activo{
+        background-color: #4590EC;
+    }
+
+.dark-mode-header { 
+    background-color: #244484;
+}
