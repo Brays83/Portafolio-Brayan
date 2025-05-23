@@ -176,9 +176,9 @@ section {
 
 .elementos-carrusel img{
     width: calc(100%/4);
-    min-height: 0.5vh;
-    height: 700px; 
-    
+    min-height:10vh;
+    height: auto; 
+    object-fit: cover;
     border-radius: 16px;
     
 }
